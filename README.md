@@ -6,7 +6,7 @@ The R package **ComTreeOpt** is a Community Tree Optimizer using Open Tree of Li
 You can install the latest version with the commands:
 ```r
 install.packages("devtools")
-devtools::install_github("username/packagename")
+devtools::install_github("iantrotter/ComTreeOpt")
 ```
 
 
