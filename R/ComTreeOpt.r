@@ -36,7 +36,7 @@ ComTreeOpt <- function(family, genus, species, megatree.uri = "https://www.dropb
   df.data <- data.frame();
   while (n < length(species)) {
     nn <- min(n+max.q,length(species))
-    df.data <-rbind(df.data, tnrs_match_names(names = as.vector(species[n+1:nn])));
+    df.data <-rbind(df.data, rotl::tnrs_match_names(names = as.vector(species[n+1:nn])));
     n <- nn;
   }
   rm(max.q, n, nn); # Clean up temporary variables
@@ -84,13 +84,13 @@ ComTreeOpt <- function(family, genus, species, megatree.uri = "https://www.dropb
   species <- c(dirty.species, clean.families)
 
   # Create tree
-  tree <- phylomatic(species, get="POST", taxnames=F, treeuri=megatree.uri);
+  tree <- brranching::phylomatic(species, get="POST", taxnames=F, treeuri=megatree.uri);
   rm(species, dirty.species);
 
   # Loop through families and paste onto the tree
   for (f in clean.families) {
     fam.ind <- f==df.clean$family;
-    fam.tree <- tol_induced_subtree(ott_ids = df.clean$ott_id[fam.ind], label_format = "id");
+    fam.tree <- rotl::tol_induced_subtree(ott_ids = df.clean$ott_id[fam.ind], label_format = "id");
     fam.tree$tip.label <- gsub("ott", "", fam.tree$tip.label);
     fam.tree$tip.label <- as.character(df.clean$species[match(fam.tree$tip.label, df.clean[["ott_id"]])])
     nodes <- matrix(NA,nrow=fam.tree$Nnode,ncol=1);
@@ -99,7 +99,7 @@ ComTreeOpt <- function(family, genus, species, megatree.uri = "https://www.dropb
     fam.tree$node.label <- df.nodes$nodes;
     fam.tree$root.edge <- 0;
     tree$tip.label <- gsub(f, "NA", tree$tip.label);
-    tree <- paste.tree(tree, fam.tree);
+    tree <- phytools::paste.tree(tree, fam.tree);
     tree$tip.label <- gsub("NA", f, tree$tip.label);
   }
   rm(f, fam.ind, fam.tree, nodes, df.nodes);
