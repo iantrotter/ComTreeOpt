@@ -21,5 +21,10 @@ Imports:
     picante,
     rotl,
     taxize
-URL: http://yihui.name/knitr/
-BugReports: https://github.com/yihui/knitr/issues
+URL: https://github.com/iantrotter/ComTreeOpt
+BugReports: https://github.com/iantrotter/ComTreeOpt/issues
+RoxygenNote: 6.0.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
