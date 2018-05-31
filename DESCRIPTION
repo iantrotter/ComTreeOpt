@@ -1,0 +1,25 @@
+Package: ComTreeOpt
+Type: Package
+Title: Community Tree Optimizer using Open Tree of Life
+Version: 0.1.0
+Author:
+    Markus Gastauer, 
+    Cecílio Frois Caldeira,
+    Ian Michael Trotter,
+    Silvio Junio Ramos,
+    João Augusto Alves Meira Neto
+Maintainer: Ian Michael Trotter <ian.trotter@ufv.br>
+Description: Community Tree Optimizer (ComTreeOpt) enhances the phylogenetic resolution of community 
+    trees for the analysis of phylogenetic diversity and dispersion measures.
+License: GPL-2
+Encoding: UTF-8
+LazyData: false
+NeedsCompilation: no
+Imports: 
+    brranching,
+    phytools,
+    picante,
+    rotl,
+    taxize
+URL: http://yihui.name/knitr/
+BugReports: https://github.com/yihui/knitr/issues
