@@ -16,7 +16,11 @@ devtools::install_github("iantrotter/ComTreeOpt")
 library(ComTreeOpt)
 ?ComTreeOpt
 data(FSN_species)
-tree <- ComTreeOpt(family, genus, species)
+tree <- ComTreeOpt(FSN_species)
+plot(tree, show.node.label=T)
+
+data(EifelDataset_species)
+tree <- ComTreeOpt(EifelDataset_species)
 plot(tree, show.node.label=T)
 ```
 
