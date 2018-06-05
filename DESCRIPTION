@@ -17,10 +17,12 @@ LazyData: false
 NeedsCompilation: no
 Imports: 
     brranching,
+    phangorn,
     phytools,
     picante,
     rotl,
-    taxize
+    taxize,
+    zoo
 URL: https://github.com/iantrotter/ComTreeOpt
 BugReports: https://github.com/iantrotter/ComTreeOpt/issues
 RoxygenNote: 6.0.1

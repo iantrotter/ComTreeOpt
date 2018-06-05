@@ -17,8 +17,7 @@
 #' tree <- ComTreeOpt(EifelDataset_species)
 #' plot(tree, show.node.label=T)
 #' @references Gastauer, M. &  Meira-Neto, J. A. A. (2017) Updated angiosperm family tree for analyzing phylogenetic diversity and community structure. \emph{Acta Botanica Brasília}, vol.31, n.2, pp.191-198. DOI: \url{http://dx.doi.org/10.1590/0102-33062016abb0306}.
-#ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "genus", species.colname = "species", megatree.uri = "https://www.dropbox.com/s/rc8jtmb6b2hdweo/R20160415.new?dl=0") {
-ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "genus", species.colname = "species", megatree.uri = "https://raw.githubusercontent.com/iantrotter/ComTreeOpt/master/data/R20160415.new.db") {
+ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "genus", species.colname = "species", megatree.uri = "https://raw.githubusercontent.com/iantrotter/ComTreeOpt/master/data/R20160415.new") {
   #### Checking the input to the function ####
   if (class(input_data) == "data.frame" && ncol(input_data) >= 3) {
     # If input_data is a data.frame, get the relevant columns, as specified by the function arguments
