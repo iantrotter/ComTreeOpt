@@ -10,19 +10,31 @@
 #' @return A phylogenetic tree containing the user-specified species, based on the Open Tree of Life.
 #' @examples
 #' data(FSN_species);
-#' tree <- ComTreeOpt(family, genus, species);
+#' tree <- ComTreeOpt(FSN_species);
+#' plot(tree, show.node.label=T)
+#'
+#' data(EifelDataset_species)
+#' tree <- ComTreeOpt(EifelDataset_species)
 #' plot(tree, show.node.label=T)
 #' @references Gastauer, M. &  Meira-Neto, J. A. A. (2017) Updated angiosperm family tree for analyzing phylogenetic diversity and community structure. \emph{Acta Botanica Brasília}, vol.31, n.2, pp.191-198. DOI: \url{http://dx.doi.org/10.1590/0102-33062016abb0306}.
 #ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "genus", species.colname = "species", megatree.uri = "https://www.dropbox.com/s/rc8jtmb6b2hdweo/R20160415.new?dl=0") {
 ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "genus", species.colname = "species", megatree.uri = "https://raw.githubusercontent.com/iantrotter/ComTreeOpt/master/data/R20160415.new.db") {
   #### Checking the input to the function ####
-  if (class(input_data) == "data.frame") {
+  if (class(input_data) == "data.frame" && ncol(input_data) >= 3) {
     # If input_data is a data.frame, get the relevant columns, as specified by the function arguments
     message(paste("Input data is a 'data.frame': attempting to use columns '", family.colname, "' for family, '", genus.colname, "' for genus, and '", species.colname, "' for species.", sep=""));
     family <- input_data[,family.colname];
     genus  <- input_data[,genus.colname];
     species <- input_data[,species.colname];
-  } else if (class(input_data) %in% c("character", "factor") & length(input_data) == 1) {
+  } else if (class(input_data) == "data.frame" && ncol(input_data) == 1) {
+    # If input_data is a data.frame with a single column, it is assumed to be in
+    # family/genus/species_name format
+    tmp <- matrix(unlist(strsplit(input_data[,1], split="/")), ncol = 3, byrow = TRUE);
+    family <-  tmp[,1];
+    genus  <-  tmp[,2];
+    species <- tmp[,3];
+    rm(tmp);
+  } else if (class(input_data) %in% c("character", "factor") && length(input_data) == 1) {
     # If input_data is a single string/factor, assume it is a filename and read the file contents
     # File format is assumed to be family/genus/species_name with no header
     message(paste("Input data is of type 'character' or 'factor', and has length == 1: interpreted as the name of a file in the format 'family/genus/species_name', with no file header.", sep=""))
@@ -31,7 +43,7 @@ ComTreeOpt <- function(input_data, family.colname = "family", genus.colname = "g
     genus   <- as.character(tmp$V2);
     species <- as.character(tmp$V3);
     rm(tmp);
-  } else if (class(input_data) %in% c("character", "factor") & length(input_data) > 1) {
+  } else if (class(input_data) %in% c("character", "factor") && length(input_data) > 1) {
     # If input_data is an array of several strings/factors, assume it is a list of species in a particular format
     message("Input data is of type 'character' or 'factor', and has length > 1: interpreted as an array of strings in the format 'family/genus/species_name'.")
     tmp <- matrix(unlist(strsplit(input_data, split="/")), ncol = 3, byrow = TRUE);
