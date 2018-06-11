@@ -17,11 +17,12 @@ LazyData: false
 NeedsCompilation: no
 Imports: 
 	animation,
-	ape,
+	ape (>= 5.1),
 	assertthat,
     brranching,
 	clusterGeneration,
 	curl,
+	expm,
 	httr,
 	jsonlite,
 	magrittr,
