@@ -18,7 +18,7 @@ NeedsCompilation: no
 Imports: 
 	animation,
 	ape,
-	asserthat,
+	assertthat,
     brranching,
 	clusterGeneration,
 	curl,
