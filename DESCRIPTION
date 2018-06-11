@@ -16,12 +16,31 @@ Encoding: UTF-8
 LazyData: false
 NeedsCompilation: no
 Imports: 
+	animation,
+	ape,
+	asserthat,
     brranching,
+	clusterGeneration,
+	curl,
+	httr,
+	jsonlite,
+	magrittr,
+	maps,
+	mnormt,
+	msm,
+	mvtnorm,
+	numDeriv,
     phangorn,
     phytools,
     picante,
+	prettyunits,
+	progress,
+	R6,
+	rentrez,
+	rncl,
     rotl,
     taxize,
+	XML,
     zoo
 URL: https://github.com/iantrotter/ComTreeOpt
 BugReports: https://github.com/iantrotter/ComTreeOpt/issues
