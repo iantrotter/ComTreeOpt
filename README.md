@@ -2,8 +2,9 @@
 
 The R package **ComTreeOpt** is a Community Tree Optimizer using Open Tree of Life. It enhances the phylogenetic resolution of community trees for the analysis of phylogenetic diversity and dispersion measures.
 
-For more complete usage instructions, please read the manual:
-(https://github.com/iantrotter/ComTreeOpt/blob/master/MANUAL.md)[Manual]
+# Manual
+For more complete usage instructions, please read the [manual](https://github.com/iantrotter/ComTreeOpt/blob/master/MANUAL.md) at:
+https://github.com/iantrotter/ComTreeOpt/blob/master/MANUAL.md
 
 ## Installation
 You can install the latest version with the commands:
