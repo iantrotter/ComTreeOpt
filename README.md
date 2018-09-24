@@ -26,6 +26,7 @@ plot(tree, show.node.label=T)
 
 ## Citation
 Please cite the package as:
+
 Gastauer, Markus, Cecílio Frois Caldeira, Ian Trotter, Silvio Junio Ramos, and João Augusto Alves Meira Neto (2018). Optimizing Community Trees Using the Open Tree of Life Increases the Reliability of Phylogenetic Diversity and Dispersion Indices. Ecological Informatics 46, 192–98. https://doi.org/10.1016/j.ecoinf.2018.06.008.
 
 ## References
