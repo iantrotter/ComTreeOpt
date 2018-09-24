@@ -4,6 +4,7 @@ The R package **ComTreeOpt** is a Community Tree Optimizer using Open Tree of Li
 
 # Manual
 For more complete usage instructions, please read the [manual](https://github.com/iantrotter/ComTreeOpt/blob/master/MANUAL.md) at:
+
 https://github.com/iantrotter/ComTreeOpt/blob/master/MANUAL.md
 
 ## Installation
