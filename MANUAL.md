@@ -99,7 +99,7 @@ write.tree(tree, "tree.txt")
 In your phylocom cmd window, you may now calibrate the exported tree with the following command (when an 'ages' is provided), please copy the following code:
 
 ```r
-# phylocom bladj -f tree.txt > tree_dt.txt
+phylocom bladj -f tree.txt > tree_dt.txt
 ```
 
 Alternatively, you may calibrate your tree in R using 'brranching' package.
